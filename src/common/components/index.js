@@ -21,3 +21,20 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuRadioGroup,
 } from "./ui/dropdown-menu";
+
+export {
+  Dialog,
+  DialogPortal,
+  DialogOverlay,
+  DialogTrigger,
+  DialogClose,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from "./ui/dialog"
+
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs"
+
+export { Textarea } from "./ui/textarea"

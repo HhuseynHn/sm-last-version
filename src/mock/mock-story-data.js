@@ -1,0 +1,15 @@
+export const mockStories = [
+    { id: 1, username: "You", image: "/placeholder.svg?height=60&width=60", isUser: true, hasUnseenStory: false },
+    { id: 2, username: "alex_j", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 3, username: "taylor", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 4, username: "sam.w", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 5, username: "jordan", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: false },
+    { id: 6, username: "casey_b", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 7, username: "riley", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 8, username: "morgan", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: false },
+    { id: 9, username: "jamie", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 10, username: "quinn", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 11, username: "wuinn", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 12, username: "squinn", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+    { id: 13, username: "tswuinn", image: "/placeholder.svg?height=60&width=60", hasUnseenStory: true },
+  ]
