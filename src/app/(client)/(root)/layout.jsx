@@ -1,13 +1,13 @@
 /** @format */
 
-import Header from "@/common/components/layout/header";
+import Header from "@/common/components/layout/header/header";
 import React from "react";
 
 export default function RootLayout({ children }) {
   return (
     <>
       <Header />
-      {/* <div>{children}</div> */}
+      <div className="px-2 ">{children}</div>
     </>
   );
 }

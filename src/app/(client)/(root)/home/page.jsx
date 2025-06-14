@@ -1,24 +1,22 @@
 /** @format */
 
-import { Button } from "@/common/components";
-import { Home } from "lucide-react";
-import Link from "next/link";
+import PostLayout from "@/modules/post/post-layout";
+import Stories from "@/modules/user/story";
 import React from "react";
 
 const HomePage = () => {
   return (
     <>
-      <div className="">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="rounded-full hover:bg-background"
-          asChild>
-          <Link href="#">
-            <Home className="h-5 w-5" />
-            <span className="sr-only">Home</span>
-          </Link>
-        </Button>
+      {/* Container */}
+      <div className="justify-items-center">
+        {/* Stories */}
+        <div className="pt-0 pb-1 justify-items-center ">
+          <Stories />
+        </div>
+        {/* Posts */}
+        <div className="max-w-screen-lg">
+          <PostLayout />
+        </div>
       </div>
     </>
   );

@@ -6,14 +6,20 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const DarkMode = () => {
-  const [theme, setTheme] = useTheme();
+  const { theme, setTheme } = useTheme()
+  const handleTheme = () => {
+    setTimeout(() => {
+      setTheme(theme === "dark" ? "light" : "dark")
+    }, 200)
+
+  }
   return (
     <>
       <Button
         variant="ghost"
         size="icon"
         className="rounded-full hover:bg-muted transition-colors"
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        onClick={() => handleTheme()}
         aria-label="Toggle theme">
         {theme === "dark" ? (
           <Sun className="h-5 w-5" />
