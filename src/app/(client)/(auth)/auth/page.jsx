@@ -1,4 +1,4 @@
-import AuthFormLayout from '@/modules/user/auth/components/auth-form-layout'
+import AuthFormLayout from '@/modules/user/auth/components/auth-layout'
 import React from 'react'
 
 const AuthLoginSignUp = () => {

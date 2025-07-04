@@ -1,6 +1,35 @@
-import React from 'react'
+import { Alert, AlertDescription, Button, Input, Label } from '@/common/components'
+import { Eye, EyeOff, Lock, Mail } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
+import { useAuth } from './auth-provider'
 
 const Login = () => {
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
+    const [showPassword, setShowPassword] = useState(false)
+    const { login } = useAuth()
+    const router = useRouter()
+    const [loginData, setLoginData] = useState({
+        email: "",
+        password: ""
+    })
+
+
+    const handleLogin = async (e) => {
+
+        e.preventDefault()
+        setLoading(true)
+        setError("")
+        const result = await login(loginData.email, loginData.password)
+        if (result.success) {
+            router.push("/home")
+        } else {
+            setError(result.error)
+            setLoading(false)
+        }
+    }
+
     return (
         <>
 
@@ -73,6 +102,8 @@ const Login = () => {
                     </Button>
                 </div>
             </form>
+
+
         </>
     )
 }

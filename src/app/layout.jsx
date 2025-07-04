@@ -1,10 +1,11 @@
 /** @format */
-
+"use client"
 import "../styles/globals.css";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import ThemeProvider from "@/common/components/layout/components/theme/theme-provider";
 import Header from "@/common/components/layout/header/header";
+import { AuthProvider } from "@/modules/user/auth/components/auth-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
 
             <div
               className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px]  justify-items-center min-h-screen pt-2 sm:pt-2 sm:pb-20 pb-20 gap-12  font-[family-name:var(--font-geist-sans)] `}>
-              {children}
+              <AuthProvider>{children}</AuthProvider>
             </div>
           </ThemeProvider>
         </body>
