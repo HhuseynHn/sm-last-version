@@ -1,8 +1,56 @@
-import React from 'react'
-
+import { Alert, AlertDescription, Button, Input, Label } from '@/common/components'
+import { Eye, EyeOff, Lock, Mail, User, Users } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
+import { useAuth } from './auth-provider'
 const SignUp = () => {
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
+    const { signup } = useAuth()
+    const router = useRouter()
+    const [signupData, setSignupData] = useState({
+        name: "",
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    })
+    const handleSignup = async (e) => {
+        e.preventDefault()
+        setLoading(true)
+
+        setError("")
+
+        if (signupData.password !== signupData.confirmPassword) {
+            setError("Passwords don't match")
+            setLoading(false)
+            return
+        }
+        if (signupData.password.length < 6) {
+            setError("Password mustbe least 6 characters long")
+            setLoading(false)
+            return
+        }
+        const result = await signup({
+            name: signupData.name,
+            userName: signupData.username,
+            email: signupData.email,
+            password: signupData.password
+        })
+        if (result.success) {
+            
+            router.push("/home")
+        } else {
+            setError(result.error)
+        }
+        setLoading(false)
+    }
+
     return (
         <>
+
             <form onSubmit={handleSignup} className="space-y-4">
                 {error && (
                     <Alert className="border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-950">
@@ -136,6 +184,9 @@ const SignUp = () => {
                     </Button>
                 </p>
             </form>
+
+
+
 
         </>
     )

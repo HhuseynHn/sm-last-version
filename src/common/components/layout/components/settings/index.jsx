@@ -1,5 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage, Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/common/components'
+import SettingsLayout from '@/modules/user/profile/settings/settings-layout'
 import { LogOut, Settings, User } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 const SettingsProfile = () => {
@@ -29,14 +31,18 @@ const SettingsProfile = () => {
                     </div>
                 </div>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="rounded-lg focus:bg-muted">
-                    <User className="mr-2 h-4 w-4" />
-                    Profile
-                </DropdownMenuItem>
-                <DropdownMenuItem className="rounded-lg focus:bg-muted">
-                    <Settings className="mr-2 h-4 w-4" />
-                    Settings
-                </DropdownMenuItem>
+                <Link href="/profile/0">
+                    <DropdownMenuItem className="rounded-lg focus:bg-muted">
+                        <User className="mr-2 h-4 w-4" />
+                        Profile
+                    </DropdownMenuItem>
+                </Link>
+                <Link href="/profile/0?modal=open">
+                    <DropdownMenuItem className="rounded-lg focus:bg-muted">
+                        <Settings className="mr-2 h-4 w-4" />
+                        Settings
+                    </DropdownMenuItem>
+                </Link>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="rounded-lg focus:bg-muted">
                     <LogOut className="mr-2 h-4 w-4" />
